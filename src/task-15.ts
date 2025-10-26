@@ -23,11 +23,11 @@
 // Завдання:
 
 // Оголоси тип Product для товару.
-type Product = {
+interface Product {
   id: number;
   title: string;
   price: number;
-};
+}
 
 // Додайте до функції явну типізацію, вкажіть, що вона повертає проміс, який приводиться до масиву товарів.
 function fetchProducts(): Promise<Product[]> {
