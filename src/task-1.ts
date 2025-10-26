@@ -1,25 +1,31 @@
-const name: string = "Alice";
-const age: number = 30;
-const isOnline: boolean = true;
+type Settings = {
+  darkMode: boolean;
+  fontSize: number;
+  language: string;
+};
 
-console.log(`Name: ${name}`);
-console.log(`Age: ${age}`);
-console.log(`Online: ${isOnline}`);
+const settings: Settings = {
+  darkMode: true,
+  fontSize: 16,
+  language: "en",
+};
 
-// Задача 1. Типізація скалярних значень (файл task-1.ts)
-// У цьому фрагменті коду оголошені три змінні з різними типами значень: текст, число і булеве значення.
+console.log(settings);
 
-// const name = "Alice";
-// const age = 30;
-// const isOnline = true;
 
-// console.log(`Name: ${name}`);
-// console.log(`Age: ${age}`);
-// console.log(`Online: ${isOnline}`);
+// Задача 1
+
+// Опис: Є об'єкт settings, який містить налаштування.
+
+// const settings = {
+//   darkMode: true,
+//   fontSize: 16,
+//   language: "en",
+// };
 
 // Завдання:
 
-// Додай до кожної змінної явну типізацію.
-// Переконайся, що TypeScript правильно визначає тип, і не видає помилку.
-// Залиш назви змінних і їх значення без змін.
+// Створіть тип Settings, який описує цей об'єкт.
+// Типізуйте settings через цей тип.
 
+//  <reference types="vite/client" />

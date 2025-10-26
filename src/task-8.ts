@@ -1,44 +1,42 @@
-import axios from "axios";
+// Задача 8
 
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-}
-
- async function fetchPosts(): Promise<Post[]> {
-     const response = await axios.get<Post[]>(
-     '<https://jsonplaceholder.typicode.com/posts>'
-   );
-   return response.data;
- }
-
- fetchPosts().then((posts) => {
-   console.log(posts[0].title);
- });
-
-// Завдання 8. HTTP-запити (файл task-8.ts)
-
-// Функція fetchPosts робить GET-запит до API та повертає список постів.
-
-// import axios from "axios";
-
-// async function fetchPosts() {
-//   const response = await axios.get(
-//     '<https://jsonplaceholder.typicode.com/posts>'
-//   );
-//   return response.data;
+// enum Role {
+//   Admin,
+//   User,
+//   Guest
 // }
-
-// fetchPosts().then((posts) => {
-//   console.log(posts[0].title);
-// });
 
 // Завдання:
 
-// Інсталюй бібліотеку axios командою npm i axios
-// Створи інтерфейс Post, який описує об'єкт поста з такими полями:
-// id: число
-// title: рядок
-// body: рядок
-// 3. Типізуй axios.get, щоб вказати, що API повертає масив постів.
+// 1. Створіть функцію getPermissions, яка приймає параметр role типу Role.
+
+// 2. Функція має повертати масив рядків, які описують права доступу для кожної ролі:
+
+// Admin має права: "create", "read", "update", "delete"
+// User має права: "read", "update"
+// Guest має лише право: "read"
+// 3. Типізуйте параметр і тип повернення функції getPermissions.
+
+// 4. Перевірте, що TypeScript не дозволяє передати в getPermissions значення, якого немає в Role.
+
+  enum Role {
+    Admin,
+    User,
+    Guest
+  }
+
+  function getPermissions(role: Role): string[] {
+    switch (role) {
+      case Role.Admin:
+        return ["create", "read", "update", "delete"];
+      case Role.User:
+        return ["read", "update"];
+      case Role.Guest:
+        return ["read"];
+      default:
+        return [];
+    }
+}
+  console.log(getPermissions(Role.Admin)); // ["create", "read", "update", "delete"]
+  console.log(getPermissions(Role.User)); // ["read", "update"]
+  console.log(getPermissions(Role.Guest)); // ["read"]

@@ -1,43 +1,22 @@
-interface Product { 
-    id: number;
-    title: string;
-    }
+type User = {
+  readonly id: string;
+  name: string;
+  age: number;
+  active: boolean;
+};
 
-const usernames: string[] = ["alice", "bob", "charlie"];
+const user: User = { id: "1", name: "Charlie", age: 25, active: true };
+console.log(user);
 
-const ratings: number[] = [4.5, 3.8, 5];
+// Задача 3
 
-const products: Product[] = [
-  { id: 1, title: "Phone" },
-  { id: 2, title: "Laptop" },
-];
+// Опис: Є об’єкт користувача:
 
-console.log(`Usernames: ${JSON.stringify(usernames)}`);
-console.log(`Ratings: ${JSON.stringify(ratings)}`);
-console.log(`Products: ${JSON.stringify(products)}`);
-
-// Задача 3. Типізація масивів(файл task - 3.ts)
-
-// У цьому коді є три масиви з різними типами даних: рядки, числа та об’єкти.
-
-// const usernames = ["alice", "bob", "charlie"];
-
-// const ratings = [4.5, 3.8, 5];
-
-// const products = [
-//   { id: 1, title: "Phone" },
-//   { id: 2, title: "Laptop" },
-// ];
-
-// console.log(`Usernames: ${JSON.stringify(usernames)}`);
-// console.log(`Ratings: ${JSON.stringify(ratings)}`);
-// console.log(`Products: ${JSON.stringify(products)}`);
+// const user= { id: "1", name: "Charlie", age: 25, active: true };
 
 // Завдання:
 
-// Додай тип для масиву рядків usernames, використовуючи синтаксис [].
-// Додай тип для масиву чисел ratings, використовуючи синтаксис [].
-// Для масиву products:
-// Створи окремий інтерфейс Product для елементів масиву.
-// Типізуй сам масив за допомогою цього інтерфейсу.
-// 4. Залиш елементи масиву products без змін.
+// Типізуйте user.
+// Зробіть властивість id тільки для читання.
+
+

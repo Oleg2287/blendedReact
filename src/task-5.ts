@@ -1,34 +1,29 @@
-function logStatus(status : "loading" | "success" | "error"): void {
-   if (status === "loading") {
-    console.log("Loading...");
-  } else if (status === "success") {
-    console.log("Success!");
-  } else if (status === "error") {
-    console.log("Something went wrong");
-  }
-}
- 
-logStatus("loading");
-    
-// Задача 5. Union Type (файл task-5.ts)
+// Задача 5
 
-// Функція logStatus приймає рядок status і виводить відповідне повідомлення.
-
-// function logStatus(status) {
-//   if (status === "loading") {
-//     console.log("Loading...");
-//   } else if (status === "success") {
-//     console.log("Success!");
-//   } else if (status === "error") {
-//     console.log("Something went wrong");
-//   }
+// function createUser({name, age}) {
+//   return {
+//     name,
+//     age,
+//     isAdmin: false
+//   };
 // }
 
-// logStatus("loading");
+// createUser({ name: "Alice", age: 30 });
 
 // Завдання:
 
-// Типізуй параметр status так, щоб дозволити тільки три конкретні рядкові значення: "loading", "success", "error"
-// Переконайся, що TypeScript не дозволяє передати будь-яке інше значення.
-// Типізуй повернення функції, зауваж що вона нічого явно не повертає.
-// Залиш реалізацію функції без змін.
+// Типізуйте функцію повністю: параметри і повернення функції.
+type User = {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+};
+
+function createUser({ name, age }: { name: string; age: number }): User {
+  return {
+    name,
+    age,
+    isAdmin: false
+  };
+}
+console.log(createUser({ name: "Alice", age: 30 }));
